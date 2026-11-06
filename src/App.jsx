@@ -1,9 +1,12 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 const App = () => {
   return (
-    <main>
-
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={''}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
