@@ -60,16 +60,14 @@ body {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     margin: 0 auto;
     left: 0;
     right: 0;
-    width: 95vw;
+    width: 100vw;
     height: 60px;
-    border: 1px solid #cbcbcb;
-    background: #ffffffe2;
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
+    border-top: 1px solid #e2e2e2;
+    background: #ffffff;
 }
 
 .navbar-main a {
