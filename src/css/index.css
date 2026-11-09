@@ -8,6 +8,10 @@
     text-decoration: none;
 }
 
+:root {
+    --transition: all 0.25s ease;
+}
+
 button {
     font-family: "Inter", sans-serif;
     cursor: pointer;
@@ -54,7 +58,7 @@ body {
     height: 100%;
 }
 
-
+ 
 
 
 .navbar-main {
@@ -70,30 +74,52 @@ body {
     height: 50px;
     border-top: 1px solid #ececec;
     background: #ffffff;
+    padding: 10px;
 }
 
 .navbar-main a {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
-    font-size: 0.75rem;
+    justify-content: center;
+    padding: 10px;
+    height: 35px;
+    font-size: 0.8rem;
     color: #969696;
-    gap: 7px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.navbar-main a span {
+    opacity: 0;
+    width: 0px;
+    transition: opacity 0.3s ease-in, opacity 0.15s ease-out;
 }
 
 .navbar-main a.active {
     color: #000;
-}
-
-.navbar-main a .icon {
-    display: flex;
-    width: 70%;
-    height: 35px;
-    padding: 7px;
-    border-radius: 10px;
-}
-
-.navbar-main a.active .icon {
     background: #f5f5f5;
+    gap: 5px;
+}
+
+.navbar-main a.active span {
+    opacity: 1;
+    width: fit-content;
+}
+
+.navbar-main a .icon.active {
+    background: #000;
+    width: 35px;
+    height: 35px;
+    padding: 7.5px;
+    color: #dedede;
+    border-radius: 50px;
+}
+
+.navbar-main a.active .icon.active {
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    color: inherit;
+    border-radius: 0;
 }
