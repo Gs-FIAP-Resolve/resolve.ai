@@ -1,5 +1,6 @@
 import { ArrowRight, ChevronRight, Document, Finance, Time } from '@carbon/icons-react'
 import Header from '../components/Header'
+import NavBar from '../components/NavBar'
 import '../css/home.css'
 import { useRef } from 'react';
 
@@ -31,6 +32,7 @@ const Home = () => {
                     </article>
                 </div>
             </section>
+            <NavBar />
         </main>
     )
 }
