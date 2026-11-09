@@ -22,12 +22,12 @@ const Home = () => {
                     <h2>O que precisa de resolver?</h2>
                     <article className='home-content-input-textarea'>
                         <textarea ref={textareaRef} onChange={handleInput} rows={1} placeholder='Escreva uma pergunta...' />
-                        <button><ArrowRight size={19} /></button>
+                        <button><ArrowRight size={15} /></button>
                     </article>
                     <article className='home-content-input-tools'>
-                        <button><span><Finance size={28} /> Encontrar um órgão</span><ChevronRight size={20} /></button>
-                        <button><span><Document size={28} /> Saber que documentos preciso</span><ChevronRight size={20} /></button>
-                        <button><span><Time size={28} /> Acompanhar um pedido</span><ChevronRight size={20} /></button>
+                        <button><span><Finance size={22} /> Encontrar um órgão</span><ChevronRight size={18} /></button>
+                        <button><span><Document size={22} /> Saber que documentos preciso</span><ChevronRight size={18} /></button>
+                        <button><span><Time size={22} /> Acompanhar um pedido</span><ChevronRight size={18} /></button>
                     </article>
                 </div>
             </section>

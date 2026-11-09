@@ -3,12 +3,13 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    padding-bottom: 50px;
 }
 
 .home-content {
     display: flex;
     flex-direction: column;
-    padding: 0 25px;
+    padding: 0 20px;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -21,7 +22,7 @@
 
 .home-content-input h2 {
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .home-content-input-textarea {
@@ -29,10 +30,10 @@
     display: flex;
     align-items: end;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 8px 7px;
     height: fit-content;
     max-height: 130px;
-    border: 1.4px solid #000;
+    border: 1.5px solid #585858;
     border-radius: 12px;
     cursor: text;
     overflow: hidden;
@@ -41,8 +42,8 @@
 .home-content-input-textarea textarea {
     display: flex;
     width: 100%;
-    min-height: 30px;
-    height: 30px;
+    min-height: 27px;
+    height: fit-content;
     max-height: 100px;
     justify-content: center;
     align-items: center;
@@ -50,8 +51,8 @@
     outline: none;
     background: none;
     font-family: "Inter", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 0.95rem;
+    font-weight: 300;
     padding: 0 10px;
     resize: none;
 }
@@ -60,14 +61,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 35px;
-    width: 35px;
-    min-height: 35px;
-    height: 35px;
-    background: #0440e1;
+    min-width: 32px;
+    width: 32px;
+    min-height: 32px;
+    height: 32px;
+    background: #ffd230;
     border-radius: 50%;
     border: none;
-    color: #fff;
 }
 
 
@@ -75,7 +75,7 @@
     margin-top: 25px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .home-content-input-tools button {
@@ -93,7 +93,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: #000;
 }

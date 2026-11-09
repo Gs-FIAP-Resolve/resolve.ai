@@ -26,22 +26,22 @@ body {
     justify-content: space-between;
     width: 100vw;
     height: fit-content;
-    padding: 30px 25px;
+    padding: 20px;
 }
 
 .header-logo {
     display: flex;
-    height: 22px;
+    height: 18px;
 }
 
 .header-avatar {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 35px;
-    width: 35px;
-    min-height: 35px;
-    height: 35px;
+    min-width: 30px;
+    width: 30px;
+    min-height: 30px;
+    height: 30px;
     border-radius: 50%;
     overflow: hidden;
 }
