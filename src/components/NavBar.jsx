@@ -5,20 +5,16 @@ const NavBar = () => {
     return (
         <nav className="navbar-main">
             <NavLink to='/home'>
-                <Home size={20} />
-                Inicío
+                <Home className="icon" size={20} />
             </NavLink>
             <NavLink to='/'>
-                <History size={20} />
-                Atividade
+                <History className="icon" size={20} />
             </NavLink>
             <NavLink to='/'>
-                <Bookmark size={20} />
-                Guardados
+                <Bookmark className="icon" size={20} />
             </NavLink>
             <NavLink to='/'>
-                <User size={20} />
-                Perfil
+                <User className="icon" size={20} />
             </NavLink>
         </nav>
     )

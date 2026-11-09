@@ -26,7 +26,7 @@ body {
     justify-content: space-between;
     width: 100vw;
     height: fit-content;
-    padding: 20px;
+    padding: 20px 20px 0;
 }
 
 .header-logo {
@@ -44,6 +44,8 @@ body {
     height: 30px;
     border-radius: 50%;
     overflow: hidden;
+    background: #f1f1f1;
+    font-size: 0.75rem;
 }
 
 .header-avatar img {
@@ -66,7 +68,7 @@ body {
     right: 0;
     width: 100vw;
     height: 60px;
-    border-top: 1px solid #e2e2e2;
+    border-top: 1px solid #ececec;
     background: #ffffff;
 }
 
@@ -82,4 +84,16 @@ body {
 
 .navbar-main a.active {
     color: #000;
+}
+
+.navbar-main a .icon {
+    display: flex;
+    width: 60%;
+    height: 35px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.navbar-main a.active .icon {
+    background: #f1f1f1;
 }
