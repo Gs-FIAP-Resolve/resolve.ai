@@ -1,0 +1,99 @@
+.home-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.home-content-input h1 {
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+.home-content-input h2 {
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.home-content-input-textarea {
+    margin: 20px 0;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 10px 10px;
+    height: fit-content;
+    max-height: 130px;
+    border: 1.4px solid #000;
+    border-radius: 12px;
+    cursor: text;
+    overflow: hidden;
+}
+
+.home-content-input-textarea textarea {
+    display: flex;
+    width: 100%;
+    min-height: 30px;
+    height: 30px;
+    max-height: 100px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0 10px;
+    resize: none;
+}
+
+.home-content-input-textarea button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    width: 35px;
+    min-height: 35px;
+    height: 35px;
+    background: #0440e1;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+}
+
+
+.home-content-input-tools {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-content-input-tools button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    color: #6e6e6e;
+}
+
+.home-content-input-tools button span {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+}
