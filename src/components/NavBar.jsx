@@ -1,4 +1,4 @@
-import { Bookmark, History, Home, User } from "@carbon/icons-react"
+import { Bookmark, History, Home, Notification, User } from "@carbon/icons-react"
 import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
@@ -12,6 +12,9 @@ const NavBar = () => {
             </NavLink>
             <NavLink to='/'>
                 <Bookmark className="icon" size={20} />
+            </NavLink>
+            <NavLink to='/'>
+                <Notification className="icon" size={20} />
             </NavLink>
             <NavLink to='/'>
                 <User className="icon" size={20} />
