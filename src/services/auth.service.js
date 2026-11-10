@@ -33,6 +33,8 @@ export async function register(name, email, password) {
     throw new Error(data.error || 'Registration failed.')
   }
 
+  await login(email, password)
+
   return true
 }
 
