@@ -3,8 +3,12 @@ import Header from '../components/Header'
 import NavBar from '../components/NavBar'
 import '../css/home.css'
 import { useRef } from 'react';
+import { useUser } from '../hooks/useUser';
 
 const Home = () => {
+
+    const { user } = useUser()
+
     const textareaRef = useRef(null);
 
     const handleInput = () => {
@@ -14,12 +18,14 @@ const Home = () => {
         element.style.height = `${element.scrollHeight}px`;
     };
 
+    const firstName = user?.name?.trim().split(/\s+/)[0] || ""
+
     return (
         <main className='home-main'>
             <Header />
             <section className='home-content'>
                 <div className='home-content-input'>
-                    <h1>Olá, Usuário.</h1>
+                    <h1>Olá, {firstName}.</h1>
                     <h2>O que precisa de resolver?</h2>
                     <article className='home-content-input-textarea'>
                         <textarea ref={textareaRef} onChange={handleInput} rows={1} placeholder='Escreva uma pergunta...' />

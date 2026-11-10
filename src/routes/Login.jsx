@@ -1,14 +1,18 @@
 import { useState, useCallback, useMemo } from 'react'
 import '../css/login.css'
 import logo from '../assets/svg/logo-dark.svg'
-import { Link, useSearchParams } from 'react-router-dom'
-import { Close, View, ViewOff } from '@carbon/icons-react'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { Close, View, ViewOff, WarningAltFilled } from '@carbon/icons-react'
+import { login, register } from '../services/auth.service'
+import { useUser } from '../hooks/useUser'
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/
 const NAME_REGEX = /^[A-Za-zÀ-ÖØ-öø-ÿ]+(?:\s[A-Za-zÀ-ÖØ-öø-ÿ]+)+$/
 
 const Login = () => {
+    const navigate = useNavigate()
     const [searchParams, setSearchParams] = useSearchParams()
+    const { refreshUser } = useUser()
     const isRegister = searchParams.get('view') === 'register'
 
     const [name, setName] = useState('')
@@ -18,6 +22,7 @@ const Login = () => {
     const [rememberMe, setRememberMe] = useState(false)
     const [touched, setTouched] = useState({ name: false, email: false, password: false })
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [apiError, setApiError] = useState('')
 
     const nameError = useMemo(() => {
         if (!isRegister || !touched.name) return ''
@@ -51,19 +56,34 @@ const Login = () => {
     const handleToggleView = useCallback((e) => {
         e.preventDefault()
         setTouched({ name: false, email: false, password: false })
+        setApiError('')
         setSearchParams(isRegister ? {} : { view: 'register' })
     }, [isRegister, setSearchParams])
 
-    const handleSubmit = useCallback((e) => {
+    const handleSubmit = useCallback(async (e) => {
         e.preventDefault()
+        setApiError('')
         setTouched({ name: true, email: true, password: true })
 
-        if (!isFormValid) return
+        if (!isFormValid || isSubmitting) return
 
         setIsSubmitting(true)
-        // Autenticação será conectada posteriormente
-        setTimeout(() => setIsSubmitting(false), 1200)
-    }, [isFormValid])
+
+        try {
+            if (isRegister) {
+                await register(name.trim(), email, password)
+            } else {
+                await login(email, password)
+            }
+
+            await refreshUser()
+            navigate('/home')
+        } catch (err) {
+            setApiError(err.message || 'Não foi possível concluir a solicitação. Tente novamente.')
+        } finally {
+            setIsSubmitting(false)
+        }
+    }, [isFormValid, isSubmitting, isRegister, name, email, password, refreshUser, navigate])
 
     return (
         <main className="login-main">
@@ -74,6 +94,13 @@ const Login = () => {
                 </header>
 
                 <form className='login-content-input' onSubmit={handleSubmit} noValidate>
+                    {apiError && (
+                        <div className='login-api-error' role="alert">
+                            <WarningAltFilled size={16} />
+                            {apiError}
+                        </div>
+                    )}
+
                     {isRegister && (
                         <article className='login-input login-input--enter'>
                             <h1>Nome</h1>
